@@ -18,3 +18,13 @@ https://bulma.io/documentation/overview/start/
 delete components folder
 delete content of app.vue and create blank content
 ## commit blank app.vue
+
+install vetur plugin to VS code
+https://itnext.io/getting-started-vue-js-and-visual-studio-code-6990f92e918a
+
+type:
+<!-- <vue -->
+
+snippet is the created
+https://vuejs.github.io/vetur/guide/snippet.html
+## commit SimpleUploadComponent
