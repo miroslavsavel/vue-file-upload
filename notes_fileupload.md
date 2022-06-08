@@ -53,3 +53,22 @@ after installation we can use axios.post()
 
 ??async function
 ??await
+
+- now I can catch POST request with payload in header in FLASK
+## commit send post request to the flask 
+
+
+# save file in FLASK
+https://flask.palletsprojects.com/en/2.1.x/patterns/fileuploads/
+
+
+# send data asj JSON from python to Vue
+https://stackoverflow.com/questions/9733638/how-to-post-json-data-with-python-requests
+
+# display json from post in vue
+https://stackoverflow.com/questions/48377799/show-json-result-with-vue-js
+https://howtocreateapps.com/vue-tutorial-json/
+
+# add router to the Vue
+https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/
+https://vuejs.org/guide/scaling-up/routing.html#simple-routing-from-scratch
