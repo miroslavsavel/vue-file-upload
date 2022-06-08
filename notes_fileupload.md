@@ -28,3 +28,12 @@ type:
 snippet is the created
 https://vuejs.github.io/vetur/guide/snippet.html
 ## commit SimpleUploadComponent
+
+# RUN
+npm run serve
+
+# Save file inside component state
+
+- installing vue developer tools for checking the memory
+https://devtools.vuejs.org/guide/installation.html
+## commit save file inside component
