@@ -37,3 +37,19 @@ npm run serve
 - installing vue developer tools for checking the memory
 https://devtools.vuejs.org/guide/installation.html
 ## commit save file inside component
+
+# Create submit button
+after form submitting we will call sendFile function
+!!! make AJAX request
+  - how AJAX works??
+    - https://www.w3schools.com/xml/ajax_intro.asp
+
+for AJAX request we will use AXIOS library
+npm add axios
+https://medium.com/spemer/using-axios-in-vue-js-17f186756a8b
+npm install --save axios
+
+after installation we can use axios.post()
+
+??async function
+??await
