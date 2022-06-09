@@ -72,3 +72,28 @@ https://howtocreateapps.com/vue-tutorial-json/
 # add router to the Vue
 https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/
 https://vuejs.org/guide/scaling-up/routing.html#simple-routing-from-scratch
+
+
+# return response from flask
+https://stackoverflow.com/questions/13081532/how-to-return-a-dict-as-a-json-response-from-a-flask-view
+@app.route("/summary")
+def summary():
+    d = make_summary()
+    return d
+
+
+# how to display data in vue, how to catch response in json
+https://jasonwatmore.com/post/2020/04/30/vue-fetch-http-post-request-examples
+https://www.bezkoder.com/vue-fetch-example/
+
+https://stackoverflow.com/questions/68486253/vue-js-how-to-fill-a-form-prepopulated-with-data-from-a-get-request
+
+this.$axios({
+  method: 'get',
+  url: 'http://127.0.0.1:8000/api/get_user_information',
+}).then(response => {
+  this.userInformation = response.data;
+  this.name = this.userInformation.Name;
+});
+
+https://www.youtube.com/watch?v=Kbm9HsF_7-4

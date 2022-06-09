@@ -41,7 +41,9 @@ export default {
             // axios.post('/api', {file: this.file})   //this naive approach will not work
             formData.append('file', this.file);
             try {
-                await axios.post('http://127.0.0.1:5000/upload_message', formData);
+                await axios.post('http://127.0.0.1:5000/upload_message', formData).then((resp)=>{
+                    console.warn(resp.data)
+                });
             }catch(err){
                 console.log(err);
             }
