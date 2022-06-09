@@ -97,3 +97,14 @@ this.$axios({
 });
 
 https://www.youtube.com/watch?v=Kbm9HsF_7-4
+
+# VUE fill form field with data 
+https://stackoverflow.com/questions/51752881/how-to-get-pre-filled-data-in-input-type-in-vue-js
+
+# CSS
+https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
+
+# two divs inline
+https://dev.to/dawnind/3-ways-to-display-two-divs-side-by-side-3d8b#:~:text=The%20most%20common%20way%20to,using%20inline%2Dblock%20css%20property.&text=The%20inline%2Dblock%20property%20on,like%20an%20inline%20element%20does.
+
+https://coder-coder.com/display-divs-side-by-side/
