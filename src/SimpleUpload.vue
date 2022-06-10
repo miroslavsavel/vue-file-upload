@@ -1,5 +1,8 @@
 <template>
     <form @submit.prevent="sendFile" enctype="multipart/form-data">
+        <div>
+            <h1 style="color: black;">Analyzátor emailových hlavičiek</h1>
+        </div>
         <!-- Our form will have just one input field -->
         <div class="field">
             <label for="file" class="label">Upload File</label>
@@ -13,68 +16,23 @@
             <button class="button is-info">Send</button>
         </div>
 
-        <div class="flex-container">
-
+        <!-- <div class="flex-container">
             <div class="flex-child magenta">
                 <h2 style="color: black;">Raw Header</h2>
-                {{ body_html }}
+                {{ raw_header }}
             </div>
-            
             <div class="flex-child green">
                 <h2 style="color: red;">Processed Header</h2>
-                {{ body_html }}
+                {{ raw_header }}
                 <p>Hello</p>
             </div>
-        
-        </div>
-
-
-        <!-- <div class="element">
-            <h2 style="color: black;">Raw Header</h2>
-                {{ body_html }}
-        </div>
-        <div class="element">
-            <h2 style="color: red;">Processed Header</h2>
-                {{ body_html }}
         </div> -->
-
-
-        <!-- <div class="flex-parent-element">
-            <div class="flex-child-element magenta">
-                <h2>Raw Header</h2>
-                {{ body_html }}
-
-            </div>
-            <div class="flex-child-element green">
-                <h2>Processed Header</h2>
-                {{ body_html }}
-            </div>
-        </div> -->
-
-        <!-- <div class='parent'>
-            <div class='child'>
-                <h2>Raw Header</h2>
-                {{ body_html }}
-            </div>
-            <div class='child'> 
-                <h2>Processed Header</h2>
-                {{ body_html }}
-            </div>
-        </div> -->
-
-        <!-- <div class="form-group">
-            <textarea
-                class="form-control"
-                name="name"
-                v-model="body_html">
-            </textarea>           
-        </div>
-        <div v-html="body_html"></div> -->
     </form>
 </template>
 
 <script>
 import axios from 'axios';
+
 
 export default {
     name: "SimpleUpload",
@@ -82,7 +40,7 @@ export default {
     data() {
         return {
             file: "",
-            body_html: ""
+            raw_header: ""
         }
     },
 
@@ -101,9 +59,12 @@ export default {
             formData.append('file', this.file);
             try {
                 await axios.post('http://127.0.0.1:5000/upload_message', formData).then((resp)=>{
-                    console.warn(resp.data.body_html)
+                    console.warn(resp.data)
                     //here we assign data from response to the component variable
-                    this.body_html = resp.data.body_html
+                    this.raw_header = resp.data.raw_header
+
+                    //Send the event on a channel - emit event on the emitter
+                    this.emitter.emit('my-event', {'eventContent': this.raw_header})
                 });
             }catch(err){
                 console.log(err);
@@ -120,7 +81,21 @@ h2{
   text-align:center;
 }
 
-.flex-container {
+h1 { 
+	font-size: 50px;
+   }
+
+/* upload file div */
+/* .field {
+  margin: auto;
+  width: 50%;
+    display: flex;
+  border: 3px solid green;
+  padding: 10px; 
+} */
+
+/* two div for headers */
+/* .flex-container {
     display: flex;
 }
 
@@ -131,47 +106,6 @@ h2{
 
 .flex-child:first-child {
     margin-right: 20px;
-} 
+}  */
 
-
-
-/* .element {
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  background: #FFFFFF;
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  color: black;
-  
-} */
-
-/* .parent {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-}
-.child {
-  display: inline-block;
-  border: 1px solid red;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-} */
-
-/* .flex-parent-element {
-  display: flex;
-  width: 50%;
-}
-
-.flex-child-element {
-  flex: 1;
-  border: 2px solid blueviolet;
-  margin: 10px;
-}
-
-.flex-child-element:first-child {
-  margin-right: 20px;
-} */
 </style>>

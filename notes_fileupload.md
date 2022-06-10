@@ -1,3 +1,5 @@
+vue create file-upload-vue
+
 ## file upload front end
 !!! tutorial
 https://www.youtube.com/watch?v=GXe_JpBQLTQ
@@ -108,3 +110,32 @@ https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
 https://dev.to/dawnind/3-ways-to-display-two-divs-side-by-side-3d8b#:~:text=The%20most%20common%20way%20to,using%20inline%2Dblock%20css%20property.&text=The%20inline%2Dblock%20property%20on,like%20an%20inline%20element%20does.
 
 https://coder-coder.com/display-divs-side-by-side/
+
+
+# vue swap between two components - prepinanie medzi raw a formated vystupom
+https://stackoverflow.com/questions/39391218/vuejs-swap-component-on-click
+https://jsbin.com/miwuduliyu/edit?html,js,console,output
+https://www.digitalocean.com/community/tutorials/vuejs-dynamic-components
+
+- check project toggle-app 
+
+# send data from one component to another
+https://tutorialslink.com/Articles/How-To-Pass-Data-Between-Components-In-Vuejs/1774
+
+eventbus
+https://www.geeksforgeeks.org/pass-data-between-components-using-vue-js-event-bus/
+https://paragchirde.medium.com/vuejs-eventbus-easy-way-to-pass-data-between-components-2d2a663a3e83
+
+!!!
+https://softauthor.com/vuejs-eventbus-send-data-between-components/
+
+
+-> eventbus project
+https://www.youtube.com/watch?v=jzh4zQcfB0o
+
+# eventbus je potrebne riesit cez kniznicu mitt 
+https://medium.com/@certosinolab/using-event-bus-in-vue-js-3-425aae8c21a6
+
+- check project event-bus2 where is working event bus in vue3
+
+npm install --save mitt
