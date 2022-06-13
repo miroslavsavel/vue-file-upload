@@ -139,3 +139,16 @@ https://medium.com/@certosinolab/using-event-bus-in-vue-js-3-425aae8c21a6
 - check project event-bus2 where is working event bus in vue3
 
 npm install --save mitt
+
+
+# display unstructured received fields 
+https://vuejs.org/guide/essentials/list.html#v-for
+https://012.vuejs.org/guide/list.html
+
+chcem do komponentu 2 nacitat z response pole unstructured_received_fields a zobrazit ho v componente2
+
+
+- i have problem with catch emitted events in TwoComponent
+
+Elements in iteration expect to have 'v-bind:key' directives  vue/require-v-for-key
+https://stackoverflow.com/questions/47608379/vue-language-server-elements-in-iteration-expect-to-have-v-bindkey-directiv

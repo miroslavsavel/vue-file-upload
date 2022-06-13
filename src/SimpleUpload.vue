@@ -40,7 +40,8 @@ export default {
     data() {
         return {
             file: "",
-            raw_header: ""
+            raw_header: "",
+            unstructured_received_fields: []
         }
     },
 
@@ -62,9 +63,13 @@ export default {
                     console.warn(resp.data)
                     //here we assign data from response to the component variable
                     this.raw_header = resp.data.raw_header
-
+                    //save returned array
+                    this.unstructured_received_fields = resp.data.unstructured_received_fields
                     //Send the event on a channel - emit event on the emitter
+                    //console.log(this.unstructured_received_fields)        //<target>: Array(5) 
+                    this.emitter.emit('my-event-array', {'eventContent': this.unstructured_received_fields})
                     this.emitter.emit('my-event', {'eventContent': this.raw_header})
+                    
                 });
             }catch(err){
                 console.log(err);
