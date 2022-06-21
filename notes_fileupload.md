@@ -152,3 +152,55 @@ chcem do komponentu 2 nacitat z response pole unstructured_received_fields a zob
 
 Elements in iteration expect to have 'v-bind:key' directives  vue/require-v-for-key
 https://stackoverflow.com/questions/47608379/vue-language-server-elements-in-iteration-expect-to-have-v-bindkey-directiv
+
+
+# I have to change behavior of sending data between components, because TwoComponent doesnt exist when 
+
+= send data after POST to parent and from parent send it to the TwoComponent
+https://tutorialslink.com/Articles/How-To-Pass-Data-Between-Components-In-Vuejs/1774
+https://blog.logrocket.com/how-to-use-props-to-pass-data-to-child-components/#:~:text=The%20way%20it%20works%20is,property%20in%20the%20child%20component.&text=You%20can%20use%20the%20root%20component%20(App.
+
+1, Using props share data from parent to child.
+2, Using Event  Emitting custom events to share data from child to parent.
+3, Using EventBus to communicate between any components
+
+- sample project vue-props
+
+https://reactgo.com/vuejs-props-tutorial/
+
+
+# how to disable
+error  Component name "Greet" should always be multi-word  vue/multi-word-component-names
+https://stackoverflow.com/questions/71205264/component-name-temp-should-always-be-multi-word-vue-multi-word-component-names
+https://eslint.vuejs.org/user-guide/#installation
+
+- vytvoris subor .eslintrc.js v root folder
+
+module.exports = {
+    extends: [
+      // add more generic rulesets here, such as:
+      // 'eslint:recommended',
+      'plugin:vue/vue3-recommended',
+      // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
+    ],
+    rules: {
+      // override/add rules settings here, such as:
+      // 'vue/no-unused-vars': 'error'
+      'vue/multi-word-component-names': 'off',
+    }
+  }
+
+
+
+  # how to send data after assync post to the parent
+
+  https://stackoverflow.com/questions/66757403/send-data-variable-from-child-to-parent-using-vuejs
+
+after submit -> emit event data-loaded
+.then(() => (this.$emit('dataLoaded', this.data)))
+
+
+# pass data to dynamic component
+https://stackoverflow.com/questions/41097909/dynamic-component-click-event-in-vue
+https://jwkicklighter.com/posts/pass-props-to-dynamic-vue-components/
+https://thewebdev.info/2022/03/10/how-to-pass-props-dynamically-to-dynamic-component-in-vue-js/

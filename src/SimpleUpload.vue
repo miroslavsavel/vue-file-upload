@@ -27,21 +27,37 @@
                 <p>Hello</p>
             </div>
         </div> -->
+        <div class="d-flex justify-content-center">
+            <div @click="selectedComponent = 'One'">RAW HEADER</div>
+            <div @click="selectedComponent = 'Two'" style="color: red;">Processed Header</div>
+            <div @click="selectedComponent = 'Three'">Three</div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <keep-alive>
+                <component :is="selectedComponent" :name="name" :heroName="channel" :unstructured_received_fields="unstructured_received_fields"></component>
+            </keep-alive>
+        </div>
     </form>
 </template>
 
 <script>
+import One from './components/OneComponent.vue';
+import Two from './components/TwoComponent.vue';
+import Three from './components/ThreeComponent.vue';
 import axios from 'axios';
 
 
 export default {
     name: "SimpleUpload",
-
+    components: {One, Two, Three},
     data() {
         return {
             file: "",
             raw_header: "",
-            unstructured_received_fields: []
+            unstructured_received_fields: [],
+            selectedComponent: 'One',
+            name: 'Vishwas',
+            channel: 'Codevolution'
         }
     },
 
@@ -69,6 +85,7 @@ export default {
                     //console.log(this.unstructured_received_fields)        //<target>: Array(5) 
                     this.emitter.emit('my-event-array', {'eventContent': this.unstructured_received_fields})
                     this.emitter.emit('my-event', {'eventContent': this.raw_header})
+                    
                     
                 });
             }catch(err){

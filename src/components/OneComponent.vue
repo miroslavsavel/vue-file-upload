@@ -8,9 +8,18 @@
             <div class="flex-child magenta">
                 {{ raw_header }}
                 <!-- print array -->
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
                 <div v-for="(item, index) in unstructured_received_fields" :key="item.id">
-                    <span>{{index}}. {{item}}</span>
+                    <tr>
+                        <td>{{index}}. {{item}}</td>
+                    </tr>
                 </div>
+                </table>
             </div>
         </div>
     </div>

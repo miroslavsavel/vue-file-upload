@@ -6,6 +6,7 @@
                 <p class="card-text">I'm number three!</p>
                 <button @click="counter++" class="btn">Click!</button>
                 <p class="card-text">Button has been clicked <b>{{ counter }}</b> times</p>
+                <h2>Hello {{name}} from Greet component {{ heroName}}</h2>
             </div>
         </div>
     </div>
@@ -13,6 +14,7 @@
 
 <script>
     export default {
+        props: ['name', 'heroName'],
         data() {
             return {counter: 0}
         }
