@@ -30,11 +30,16 @@
         <div class="d-flex justify-content-center">
             <div @click="selectedComponent = 'One'">RAW HEADER</div>
             <div @click="selectedComponent = 'Two'" style="color: red;">Processed Header</div>
-            <div @click="selectedComponent = 'Three'">Three</div>
+            <div @click="selectedComponent = 'Three'">RESULTS</div>
         </div>
         <div class="d-flex justify-content-center">
             <keep-alive>
-                <component :is="selectedComponent" :name="name" :heroName="channel" :unstructured_received_fields="unstructured_received_fields"></component>
+                <component :is="selectedComponent" 
+                :name="name" 
+                :heroName="channel" 
+                :structured_parsed_fields_Received="structured_parsed_fields_Received" 
+                :unstructured_received_fields="unstructured_received_fields">
+                </component>
             </keep-alive>
         </div>
     </form>
@@ -55,6 +60,7 @@ export default {
             file: "",
             raw_header: "",
             unstructured_received_fields: [],
+            structured_parsed_fields_Received: [],
             selectedComponent: 'One',
             name: 'Vishwas',
             channel: 'Codevolution'
@@ -81,6 +87,7 @@ export default {
                     this.raw_header = resp.data.raw_header
                     //save returned array
                     this.unstructured_received_fields = resp.data.unstructured_received_fields
+                    this.structured_parsed_fields_Received = resp.data.structured_parsed_fields_Received
                     //Send the event on a channel - emit event on the emitter
                     //console.log(this.unstructured_received_fields)        //<target>: Array(5) 
                     this.emitter.emit('my-event-array', {'eventContent': this.unstructured_received_fields})

@@ -2,39 +2,51 @@
     <div>
         <div class="card m-3" style="width: 75rem;">
             <div class="card-body">
-                <h2 style="color: red;">Processed Header</h2>
-                <p class="card-text">I'm number two!</p>
-                <!-- print array -->
-                <table>
-                    <tr>
-                        <th>Company</th>
-                        <th>Contact</th>
-                        <th>Country</th>
-                    </tr>
-                <div v-for="(item, index) in unstructured_received_fields" :key="item.id">
-                    <tr>
-                        <td>{{index}}. {{item}}</td>
-                    </tr>
-                </div>
+                <!-- <h2 style="color: black;">Raw received fields</h2> -->
+                <!-- nice table, but only raw received fields -->
+                <!-- <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Poradie</th>
+                            <th>Received field</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in unstructured_received_fields" :key="item.id">
+                            <td>{{index}}</td>
+                            <td>{{item}}</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                <!--  -->
+                <!-- parsed fields in right order -->
+                <h2 style="color: red;">Structured Received field</h2>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Poradie</th>
+                            <th>Received field</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in structured_parsed_fields_Received" :key="item.id">
+                            <td>{{index}}</td>
+                            <td>{{item}}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
-            <!-- <ul id="demo">
-                <li v-repeat="unstructured_received_fields" class="item-{{$index}}">
-                    {{$index}} - {{parentMsg}} {{childMsg}}
-                </li>
-            </ul> -->
-            <!-- <ul id="tags">
-                <li v-repeat="unstructured_received_fields">
-                    {{$value}}
-                </li>
-            </ul> -->
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['unstructured_received_fields', 'heroName'],
+        props: [
+                'unstructured_received_fields', 
+                'structured_parsed_fields_Received',
+                'heroName'
+        ],
         data(){
             return{
                 raw_header: ""

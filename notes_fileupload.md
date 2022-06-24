@@ -204,3 +204,6 @@ after submit -> emit event data-loaded
 https://stackoverflow.com/questions/41097909/dynamic-component-click-event-in-vue
 https://jwkicklighter.com/posts/pass-props-to-dynamic-vue-components/
 https://thewebdev.info/2022/03/10/how-to-pass-props-dynamically-to-dynamic-component-in-vue-js/
+
+# krajsie zobranie tabulky
+https://jasonwatmore.com/post/2020/09/11/vuejs-display-a-list-of-items-with-v-for

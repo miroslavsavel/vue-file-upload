@@ -8,7 +8,7 @@
             <div class="flex-child magenta">
                 {{ raw_header }}
                 <!-- print array -->
-                <table>
+                <!-- <table>
                     <tr>
                         <th>Company</th>
                         <th>Contact</th>
@@ -19,7 +19,7 @@
                         <td>{{index}}. {{item}}</td>
                     </tr>
                 </div>
-                </table>
+                </table> -->
             </div>
         </div>
     </div>
