@@ -20,7 +20,7 @@
                 </table> -->
                 <!--  -->
                 <!-- parsed fields in right order -->
-                <h2 style="color: red;">Structured Received field</h2>
+                <h2 style="color: black;">Structured Received field</h2>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -30,6 +30,21 @@
                     </thead>
                     <tbody>
                         <tr v-for="(item, index) in structured_parsed_fields_Received" :key="item.id">
+                            <td>{{index}}</td>
+                            <td>{{item}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 style="color: black;">Received-SPF</h2>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Poradie</th>
+                            <th>Received field</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in receivedSPF" :key="item.id">
                             <td>{{index}}</td>
                             <td>{{item}}</td>
                         </tr>
@@ -45,6 +60,7 @@
         props: [
                 'unstructured_received_fields', 
                 'structured_parsed_fields_Received',
+                'receivedSPF',
                 'heroName'
         ],
         data(){

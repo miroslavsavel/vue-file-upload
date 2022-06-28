@@ -37,6 +37,7 @@
                 <component :is="selectedComponent" 
                 :name="name" 
                 :heroName="channel" 
+                :receivedSPF="receivedSPF"
                 :structured_parsed_fields_Received="structured_parsed_fields_Received" 
                 :unstructured_received_fields="unstructured_received_fields">
                 </component>
@@ -61,6 +62,7 @@ export default {
             raw_header: "",
             unstructured_received_fields: [],
             structured_parsed_fields_Received: [],
+            receivedSPF: [],
             selectedComponent: 'One',
             name: 'Vishwas',
             channel: 'Codevolution'
@@ -88,6 +90,7 @@ export default {
                     //save returned array
                     this.unstructured_received_fields = resp.data.unstructured_received_fields
                     this.structured_parsed_fields_Received = resp.data.structured_parsed_fields_Received
+                    this.receivedSPF = resp.data.receivedSPF
                     //Send the event on a channel - emit event on the emitter
                     //console.log(this.unstructured_received_fields)        //<target>: Array(5) 
                     this.emitter.emit('my-event-array', {'eventContent': this.unstructured_received_fields})
